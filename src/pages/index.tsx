@@ -18,7 +18,6 @@ type HomeProps = {
 }
 
 export default function Home({ products }: HomeProps) {
-  console.log(products[0])
   return (
     <div className="bg-gray-100">
       <Head>

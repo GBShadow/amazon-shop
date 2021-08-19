@@ -23,7 +23,7 @@ function ProductFeed({ products }: ProductFeedProps) {
         ))}
       </div>
 
-      {products.slice(4, products.length).map(product => (
+      {products.slice(5, products.length).map(product => (
         <Product key={product.id} product={product} />
       ))}
     </div>
