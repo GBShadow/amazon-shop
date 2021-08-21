@@ -1,7 +1,9 @@
 import Banner from 'components/Banner'
 import Header from 'components/Header'
 import ProductFeed from 'components/ProductFeed'
-import { GetServerSideProps } from 'next'
+import { GetServerSideProps, GetServerSidePropsContext } from 'next'
+import { Session } from 'next-auth'
+import { getSession } from 'next-auth/client'
 import Head from 'next/head'
 
 export type IProduct = {
@@ -34,7 +36,10 @@ export default function Home({ products }: HomeProps) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
+  const session = await getSession(context)
   const products = await fetch('https://fakestoreapi.com/products').then(
     response => response.json()
   )
@@ -42,6 +47,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {
       products,
+      session,
     },
   }
 }

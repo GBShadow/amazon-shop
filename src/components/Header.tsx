@@ -51,7 +51,7 @@ function Header() {
             <p className="font-extrabold md:text-sm">Account & list</p>
           </div>
 
-          <div className="link">
+          <div onClick={() => router.push('/orders')} className="link">
             <p>Returns</p>
             <p className="font-extrabold md:text-sm">& Orders</p>
           </div>
@@ -61,7 +61,7 @@ function Header() {
             className="relative link flex items-center"
           >
             <span
-              className="absolute top-0 right-0 md:right-10 h-4 w-4 
+              className="absolute top-0 right-0 md:right-10 h-4 w-4
             bg-yellow-400 text-black font-bold text-center rounded-full"
             >
               {items.length}
