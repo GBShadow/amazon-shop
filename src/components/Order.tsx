@@ -24,7 +24,7 @@ function Order({ order }: OrderProps) {
             Delivery <Currency quantity={order.amountShipping} currency="BRL" />
           </p>
         </div>
-        0
+
         <p className="text-sm whitespace-nowrap sm:text-xl self-end flex-1 text-right text-blue-500">
           {order.items.length} items
         </p>
